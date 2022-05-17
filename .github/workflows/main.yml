@@ -21,5 +21,5 @@ jobs:
       - name: Deploy app build to S3 bucket
         run: aws s3 sync public s3://reactcicidbuck --delete
       - name: Invalidate cloudfront distribution
-        run: aws cloudfront create-invalidation --distribution-id E2TS8V153BHW49 --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id E2TS8V153BHW49 --paths '/*'
          echo "DEPLOYED SUCCESSFULLY"
