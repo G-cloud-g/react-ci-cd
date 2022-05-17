@@ -20,3 +20,6 @@ jobs:
         run: npm install && npm run build
       - name: Deploy app build to S3 bucket
         run: aws s3 sync public s3://reactcicidbuck --delete
+      - name: Invalidate cloudfront distribution
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths '/*'
+             echo "DEPLOYED SUCCESSFULLY"
