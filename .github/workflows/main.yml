@@ -19,5 +19,5 @@ jobs:
       - name: Build React App
         run: npm install && npm run build
       - name: Deploy app build to S3 bucket
-        run: aws s3 sync public s3://reactcicidbuck --delete
+        run: aws s3 sync --acl public-read --delete build s3://reactcicidbuck
 
